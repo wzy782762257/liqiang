@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>rest参数</title>
+</head>
+<body>
+	<script>
+		function add(...args){
+			// 1.arguments
+			console.log(arguments);
+			// 2.rest参数
+			const arr = args.map(item => {
+				return item * 10;
+			});
+		}
+		add(1,2,3,4,5,6,7,8,9);
+
+		// rest 参数注意点   rest 参数必须要放在形参的最后
+		function mul(a,b,...args){
+			console.log(args);
+		}
+
+		mul(1,2,3,4,5,6);
+	</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Symbol内置属性</title>
+</head>
+<body>
+	<script>
+		var name =- 'height';
+		// Symbol.replace
+		const obj = {
+			[name]: '178cm',
+			// Symbol.replace 属性对应的函数 ，当replace() 处理该对象的时候，自动触发
+			[Symbol.replace]: function(){
+				console.log('我被replace方法处理了');
+			},
+
+			[Symbol.split]: function(){
+				console.log('我被split方法处理了');
+			}
+		}
+
+		// console.log(obj,'abc');
+		name.split(obj);
+	</script>
+</body>
+</html>

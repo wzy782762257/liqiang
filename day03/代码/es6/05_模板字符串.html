@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>模板字符串</title>
+</head>
+<body>
+	<script>
+		// 声明 /*    */   */
+		let str = `hello
+		模板字符串`;
+
+		// 回车特性
+		let html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>`
+
+// 变量输出特性
+let shenteng = '沈腾';
+let ma = '马丽';
+// let mahua = '我比较喜欢喜剧演员' + shenteng;
+let mahua = `我比较喜欢喜剧演员${shenteng},另一个比较喜欢的是${ma};`
+
+console.log(mahua);
+// console.log(str);
+// console.log(typeof str);
+	</script>
+</body>
+</html>

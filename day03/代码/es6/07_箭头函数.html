@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>箭头函数</title>
+</head>
+<body>
+	<script>
+		/*
+		function fn(){
+		}
+		var fn2 = function (){
+		};
+		var fn3  = function (){};
+		*/
+
+		// ES6 允许使用【箭头】(=>)定义函数。
+
+		// 1.声明格式
+		// let fn = (a,b) => {
+		// 	console.log('hello 箭头函数');
+		// 	return a + b;
+		// }
+
+		// 2.函数调用
+		// console.log(fn(100,200));
+
+		// 箭头函数特点
+
+		// 1.this 的值时静态的， this始终指向箭头函数定义时所在的作用域下的 this 的值
+		// function getName1(){
+		// 	console.log(this.name);
+		// }
+
+		// let getName2 = () => {
+		// 	console.log(this,name);
+		// }
+
+		// // 准备两个对象的name属性
+		// window.name = 'WINDOW';
+
+		// const OBJ = {
+		// 	name : '尚硅谷'
+		// }
+
+		// call 方法改变函数内部的this
+		// getName1.call(OBj);
+		// getName2.call(OBJ);
+
+
+		// 2.不能作为构造函数使用
+		// let FN = () => {};
+		// const obj = new FN();
+
+
+		// 3.不能使用 arguments
+		// function Fn(){
+		// 	console.log(arguments);// 伪数组
+		// }
+		// FN(1,2,3);
+
+
+		// 4.箭头函数简写
+		// 一。不写小括号，当形参有且只有一个的时候
+		// 二。不写花括号，当代码体只有一条语句的时候，并且语句执行结果为函数返回值的（如果不写花括号的话，return 也不能写）
+		let fn = item => item * item;
+
+		console.log(fn(10));
+
+
+	</script>
+</body>
+</html>

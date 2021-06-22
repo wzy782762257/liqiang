@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>点击div换色</title>
+	<style>
+		.item{
+			width: 100px;
+			height: 50px;
+			border: solid rgb(42, 156, 156);
+			float: left;
+			margin-right: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="containeer">
+		<h2 class="page-header">点击切换颜色</h2>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+	</div>
+
+	<script>
+		// 获取元素对象
+		var items = document.querySelectorAll('.item');
+		// 绑定事件
+		// for(let i=0; i<items.length; i++){
+		// 	items[i].onclick = function () {
+		// 		//????
+		// 		items[i].style.background = 'pink';
+		// 	}
+		// }
+
+		// es5模拟实现
+		for(var i=0; i<items.length; i++){
+			// IIFE 函数表达式自调用
+			(function (i){
+				items[i].onclick = function (){
+					items[i].style.background = 'pink';
+				}
+			})(i);
+		}
+
+		i = 100;
+
+		// {
+		// 	let i=0;
+		// 	items[i].onclick =  function () {
+		// 		itmes[i].style.background = 'pink';
+		// 	}
+		// }
+
+		// {
+		// 	let i=1;
+		// 	items[i].onclick =  function () {
+		// 		itmes[i].style.background = 'pink';
+		// 	}
+		// }
+		
+		// {
+		// 	let i=2;
+		// 	items[i].onclick =  function () {
+		// 		itmes[i].style.background = 'pink';
+		// 	}
+		// }
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>扩展运算符</title>
+</head>
+<body>
+	<script>
+		// 数组的展开
+		const arr = ['苏有朋','吴奇隆','陈志朋'];
+		// // ...arr => '苏有朋','吴奇隆','陈志朋'
+		// function like('苏有朋','吴奇隆','陈志朋') {
+			// 复制数组
+			// const newArr = [...arr];
+			// console.log(newArr);
+
+			// 对象的展开
+			const skillOne = {
+				q: '天音波'
+			};
+
+			const skillTwo = {
+				w: '金钟罩'
+			};
+
+			const skillThree = {
+				e: '天雷破'
+			};
+
+			const skillFour = {
+				r: '猛龙摆尾'
+			};
+
+			const seng = {
+				...skillOne,    // q: '天音波'
+				...skillTwo,	// w: '金钟罩'
+				...skillThree,	// e: '天雷破'
+				...skillFour	// r: '猛龙摆尾'
+			}
+		
+			console.log(seng);
+	</script>
+</body>
+</html>

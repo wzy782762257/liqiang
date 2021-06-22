@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>迭代器自定义遍历数据</title>
+</head>
+<body>
+	<script>
+
+		// team.members.forEach
+
+		const team = {
+			name: '终极一班',
+			members: [
+				'xiaoming',
+				'xiaoning',
+				'xiaotian',
+				'knight'
+			],
+			// 添加 Symbol.iterator
+			[Symbol.iterator]: function(){
+				// 变量下标
+				let index = 0;
+				return {
+					next: () => {
+						// {value: 'xiaoming', done:false}
+						// {value: 'xiaoning', done:false}
+						// {value: 'xiaotiao', done:false}
+						// {value: 'knight', done:false}
+						// {value: 'undefined', done:true}
+						let result;
+						// 判断 index 是否到最后了
+						if(index < 4){
+							// 如果没有到最后,则设置 done 为false
+							result = {
+								value: this.members[index], done: false
+							}
+						} else {
+							// 如果到最后了
+							result = {
+								value: undefined, done: true
+							}
+						}
+						// 下标自增
+						index++;
+						return result;
+					}
+				}
+			}
+		};
+
+		for(let v of team) {
+			console.log(v);
+		}
+
+	</script>
+</body>
+</html>

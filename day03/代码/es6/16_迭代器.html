@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>迭代器</title>
+</head>
+<body>
+	<script>
+		const arr = ['王一博','张艺兴','王嘉尔','钟汉良'];
+
+		for(let v of arr){
+			console.log(v);
+		}
+
+		// 调用Symbol.iterator方法
+		const iterator = arr[Symbol.iterator]();
+
+		// 调用 iterator.next方法
+		console.log(iterator.next());
+		console.log(iterator.next());
+		console.log(iterator.next());
+		console.log(iterator.next());
+		console.log(iterator.next()); // {value: 'undefined', done: true }
+
+
+
+		// for(let i in arr){
+		// 	console.log(i);
+		// }
+	</script>
+</body>
+</html>

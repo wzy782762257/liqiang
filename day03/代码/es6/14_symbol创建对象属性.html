@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Symbol创建对象属性</title>
+</head>
+<body>
+	<script>
+		// 想对象中添加方法  up  down 属性名 === 键名 === 键
+		let game = {
+			name:'俄罗斯方块'
+		};
+
+		// Symbol('lerft')是一个类似字符串的值，可以作为对象的属性
+		// game[Symbol('left')] = function (){
+		// 	console.log('left');
+		// };
+		// game[Symbol('left')]();
+
+		// 1.声明对象
+		let methods = {
+			left: Symbol('left'),
+			right: Symbol('right')
+		};
+
+		//  为game对象添加方法
+		game[methods.left] = function(){
+			console.log('向左移动');
+		}
+
+		game[methods.right] = function(){
+			console.log('向右移动');
+		}
+
+		game[methods.left]();
+		game[methods.right]();
+	</script>
+</body>
+</html>
