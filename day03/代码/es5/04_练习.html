@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>练习</title>
+</head>
+<body>
+	<script>
+		// 要求添加 total 属性,获得班级的总分数
+		// var banji = {
+		// 	name:'HTML',
+		// 	scores:[
+		// 		{
+		// 			name:'张三',
+		// 			score:90
+		// 		},
+		// 		{
+		// 			name:'李四',
+		// 			score:85
+		// 		},
+		// 		{
+		// 			name:'王五',
+		// 			score:95
+		// 		},{
+		// 			name:'赵柳',
+		// 			score:88
+		// 		}
+		// 	]
+		// };
+
+		// Object.defineProperties(banji, {
+		// 	// 添加 total 属性
+		// 	total: {
+		// 		// 获取total 的值
+		// 		get: function () {
+		// 			// 声明变量
+		// 			var sum = 0;
+		// 			for(var i = 0; i < this.scores.length; i++){
+		// 				// 分数累加
+		// 				sum += this.scores[i].score;
+		// 			}
+		// 			// 返回累计后的值
+		// 			return sum;
+		// 		}
+		// 	},
+		// 	// 平均数\
+		// 	avg: {
+		// 		get : function () {
+		// 			return this.total / this.scores.length;
+		// 		}
+		// 	}
+		// });
+
+		// //获取 total 属性
+		// console.log(banji.total);
+		// console.log(banji.avg); 
+
+
+
+		// 要求添加 total 属,获得班级的总分数
+		// var banji = {
+		// 	name: 'HTML',
+		// 	scores: [
+		// 		{
+		// 			name: '张三',
+		// 			score: 90
+		// 		},
+		// 		{
+		// 			name: '李四',
+		// 			score: 85
+		// 		},
+		// 		{
+		// 			name: '王五',
+		// 			score: 95
+		// 		},
+		// 		{
+		// 			name: '赵六',
+		// 			score: 88
+		// 		}
+		// 	]
+		// };
+
+		// Object.defineProperties(banji, {
+		// 	// 添加 total 属性
+		// 	total: {
+		// 		// 获取 total 的值
+		// 		get: function () {
+		// 			// 声明变量
+		// 			var sum = 0;
+		// 			for (var i=0; i<this.scores.length; i++){
+		// 				// 分数累加
+		// 				sum += this.scores[i].score;
+		// 			}
+		// 			// 返回累计后的值
+		// 			return sum;
+		// 		}
+		// 	},
+		// 	// 平均分数
+		// 	avg: {
+		// 		get: function () {
+		// 			return this.total / this.scores.length;
+		// 		}
+		// 	}
+		// });
+		
+		// // 获取 total 属性
+		// console.log(banji.total);
+		// console.log(banji.avg);
+
+
+
+		// 要求添加 total 属性 获得班级的总分数
+
+		var banji = {
+			name: 'HTML',
+			scores: [
+				{
+					name:'张三',
+					score: 90
+				},
+				{
+					name: '李四',
+					score: 85
+				},
+				{
+					name: '王五',
+					score: 95
+				},
+				{
+					name: '赵六',
+					score: 100
+				}
+			]
+		};
+
+		Object.defineProperties(banji, {
+			// 添加 total 属性
+			total: {
+				get: function () {
+					// 声明变量
+					var sum = 0;
+					for(var i=0; i<this.scores.length; i++){
+						// 分数累加
+						sum += this.scores[i].score;
+					}
+					// 返回累加后的值
+					return sum;
+				}
+			},
+			// 平均数
+			avg: {
+				get: function () {
+					return this.total / this.scores.length;
+				}
+			}
+		});
+
+		// 获取 total 属性
+		console.log(banji.total);
+		console.log(banji.avg);
+	</script>
+</body>
+</html>

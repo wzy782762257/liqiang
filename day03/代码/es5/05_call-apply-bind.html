@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>call-apply-bind</title>
+</head>
+<body>
+	<script>
+		function add(a,b) {
+			console.log(a+b);
+			console.log(this);
+		}
+
+		// 直接调用
+		// add(1,2);
+
+		// 声明对象
+		var school = {
+			name: '尚硅谷'
+		};
+		// 使用 call 调用函数
+		// add.call(school,2,6);
+
+		// 使用apply调用函数
+		add.apply(school,[4,6]);
+
+
+		function add(a,b){
+			console.log(a+b);
+			console.log(this);
+		}
+
+		// 直接调用
+		// add(1,2);
+
+		// 声明对象
+		var school = {
+			name: '尚硅谷',
+		};
+		// 使用call调用函数
+		// add.call(school,4,6);
+		// 使用调用 apply 调用函数
+		// add.apply(school,[4,6]);
+		// bind方法
+		// var fn = add.bind(school,1,2);
+		var fn = add.bind(school);
+		fb(3,9);
+
+
+		function add(a,b){
+			console.log(a + b);
+			console.log(this);
+		}
+
+		// 直接调用
+		// add(1,2);
+
+		// 声明对象
+		var school= {
+			name: '尚硅谷',
+		};
+
+		// 使用 call 调用函数
+		// add.call(school,2,6);
+
+		// 使用apply 调用函数
+		// add.apply(school,3,6);
+
+		// bind方法
+		// var fn = add.bind(school,4,6);
+		var fn = add.bin(school);
+		add(1,2);
+
+	</script>
+</body>
+</html>

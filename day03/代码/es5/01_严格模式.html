@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>严格模式</title>
+</head>
+<body>
+	<script>
+		// 一、严格模式的声明
+
+		// 1.全局声明
+		// "use strict";
+
+		// 2.函数内部声明
+		// function fn(){
+			// "use strict";
+		// }
+
+		"use strict";
+		// 二、严格模式的特性
+		// 1、不允许使用未声明的变量
+		// a = 100;
+
+		// 2.函数内部的this不指向window
+		// function(){
+			// console.log(this);
+		// }
+		// fn();
+
+		// 3.eval 作用域  eval 是一个函数，将参数字符串进行解析并执行
+		// eval('var b = 200; console.log(b)');
+		// console.log(b);
+
+		// 4.对象不能有重复的属性
+		// var obj = {
+		// 	a = 100,
+		// 	a = 100
+		// }
+		// console.log(obj);
+
+		// 5.严格模式下，函数不允许有同名的形参
+		// function fn(a,a){
+
+		// }
+		// fn(1,2);
+
+		// 6.姓曾一些保留字  private   protected  implements
+		var private = 100; // private  私有的  public
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Object.defineProperties</title>
+</head>
+<body>
+	<script>
+		// defineProperties  dinfe 定义   property 属性
+		var obj = {
+			name:'ThinkPad',
+			version:'W540',
+			jiage:0
+		};
+
+		// 添加  info 属性
+		Object.defineProperties(obj,{
+			info: {
+				// value : 'ThinkPad 540',
+				// writable:false // 该属性不能修改
+				
+				// 获取当前info的属性值
+				get: function (){
+					// this 指向的是当前正在操作的对象的
+					return this.name + '' + this.version;
+				}
+			},
+			price:{
+				// 设置
+				set:function (v){
+					// 检测值是否是数字
+					if(typeof v === 'number'){
+						// 赋值
+						this.jiage = v;
+					}
+				},
+				get: function(){
+					// 返回jiage 属性的值
+					return this.jiage;
+				}
+			}
+
+
+		});
+
+		// obj.info = '哎呦不错哦！！';
+		// console.log(info);
+
+		obj.price = 3000;
+		console.log(obj.price);
+
+
+	</script>
+</body>
+</html>

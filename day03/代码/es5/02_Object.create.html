@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Object.create</title>
+</head>
+<body>
+	<script>
+		var car = {
+			name:'汽车',
+			run:function (){
+				console.log('我可以行驶');
+			}
+		}
+
+		// 创建对象
+		var newObject = Object.create(car,{
+			// 属性
+			brand:{
+				value:"大众",
+				// 设置属性是否可以修改
+				writable:false,
+				// 设置属性是否可以删除
+				configurable:false,
+				// 设置属性是否可以枚举（遍历）
+				enumerable:true
+			},
+			// getter 和 setter
+			price:{
+				// getter 获取器
+				get:function(){
+					// this 指向的是【新创建的对象】
+					return this.jiage;
+				},
+				// setter 设置器
+				set:function(v){
+					// console.log(v);
+					this.jiage = v;
+				}
+			}
+		});
+
+		// 设置属性
+		// newObject.brand = '宝马';
+		// 删除属性
+		// delete  newObjcet.brand;
+		// 遍历对象
+		// for(var i in newObject){
+			// console.log(i);
+		// }
+
+		// console.log(newObject);
+		// console.log(newObject.price);
+		newObject.price = 9000;
+		console.log(newObject.price);
+
+
+		console.log(newObject);
+
+	</script>
+</body>
+</html>
