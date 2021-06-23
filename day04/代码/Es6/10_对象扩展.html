@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>对象扩展</title>
+</head>
+<body>
+	<script>
+		// 1.判断两个值是否完全相等   ===  Object.is
+		// let a = 100;
+		// let b = 100;
+		// console.log(Object.is(a,b));
+		// console.log(Object.is(Nan,NaN));  //true
+		// console.log(NaN === NaN);  // false
+
+
+		// 2.Object.assing 对象的合并
+		// const obj1 = {
+		// 	name: '尚硅谷',
+		// 	age: 7
+		// };
+
+		// const obj2 = {
+		// 	a: 100,
+		// 	b: 200,
+		// 	name: 'atguigu'
+		// };
+
+		// const obj3 = {
+		// 	c: 300,
+		// 	d: 400,
+		// 	name: 'hello atGuigu'
+		// }
+		// const result = Object.assing(obj1,obj2,obj3);
+		// console.log(result = obj1);
+		// console.log(obj1);
+
+
+
+		// 3.直接修改 __proto__设置原型
+		const obj = {
+			name: 'atguigu'
+		};
+
+		const obj2 = {
+			a: 100,
+			b: 200
+		}
+
+		// 直接设置 obj2 的原型对象
+		obj2.__proto__ = obj;
+
+		console.log(obj2);
+
+
+
+	</script>
+</body>
+</html>

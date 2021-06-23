@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>深拷贝-JSON</title>
+</head>
+<body>
+	<script>
+		// JSON 实现深拷贝, 不能拷贝[方法]
+
+		// 对象
+		const school = {
+			name: 'atguigu',
+			pos: ['上海','北京','深圳'],
+			change: function(){
+				console.log(不断改进);
+			}
+		};
+
+		// 将对象转化为 JSON 字符串
+		let str = JSON.stringify(school);
+		// 再将 JSON 字符串 转化为对象
+		const newSchool = JSON.parse(str);
+
+		// 修改新对象的属性值
+		newSchool.pos[0] = 'shanghai';
+
+		console.log(school);
+		console.log(newSchool);
+	</script>
+</body>
+</html>

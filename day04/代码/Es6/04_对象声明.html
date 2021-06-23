@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>对象声明</title>
+</head>
+<body>
+	<script>
+		function Phone(brand, price){
+			// 属性初始化
+			this.brand = brand; //品牌
+			this.price = price; //价格
+		}
+		Phone.prototype.call = function(someone){
+			console.log(`我可以用力啊给${someone}打电话!`);
+		}
+
+		// 实例化
+		const nokia = new Phone('诺基亚',230);
+
+		nokia.call('凯强');
+
+		class Phone{
+			// 构造函数   特殊的方法   不需要手动调用,初始化对象的
+			constructor(brand, vprice){
+				this,brand = brand;
+				this.price = price;
+			}
+			// 
+			call(someone){
+				console.log(`我可以给4{someone}打电话`);
+			}
+		}
+
+		// 实例化对象
+		const heimie = new Phone('黑莓','很贵');
+		console.log(heimei);
+
+
+	</script>
+</body>
+</html>

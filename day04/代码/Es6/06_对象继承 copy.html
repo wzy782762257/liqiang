@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>对象继承</title>
+</head>
+<body>
+	<script>
+		// 手机
+		function Phone(brand,price){
+			this.brand = brand;
+			this.price = price;
+		}
+
+		Phone.prototype.call = function(){
+			console.log('我可以打电话');
+		}
+
+		// 智能手机
+		function SmartPhone(brand,price,pixel, storage){
+			// 调用 phone函数进行属性的初始化
+
+			Phone.call(this,bran,price);
+			// 对当前实例对象的属性进行初始化
+			this.pixel = pixel;
+			this.storage = storage;
+		}
+
+		// 设置当前  SmartPhone 构造函数的原型
+		SmartPhone.prototype = new Phone();
+
+		// 设置子类的方法
+		SmartPhone.prototype.photo = function(){
+			console.log('我可以拍照哦');
+		};
+
+		SmartPhone.prototype.playGame = function(){
+			console.log('我可以玩游戏');
+		};
+
+		const chuizi = new SmartPhone('锤子',2800,'800W','32G');
+
+		// console.log(chuiizi);
+		chuizi.call();
+		chuizi.playGame();
+
+
+	</script>
+</body>
+</html>

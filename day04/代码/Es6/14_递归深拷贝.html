@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>递归深拷贝</title>
+</head>
+<body>
+	<script>
+		// const data = ['a','b','c'];
+		// console.log(typeof school);
+
+		// 目标数据
+		const school = {
+			name: 'atguigu',
+			pos: ['上海','北京','深圳'],
+			founder:{
+				name: '刚哥',
+				age: 43
+			},
+			improve: function(){
+				console.log('不断改进');
+			}
+		};
+
+		function deepClone(data){
+			// 声明一个变量 空对象
+			let container // {}  []
+			// 判断数据类型
+			let type = getDataType(data);
+			if(type === 'Object'){
+				container = {};
+			}
+			if(type === 'Array'){
+				container = [];
+			}
+			// 遍历对象  for ...in 既可以遍历数组 又可以遍历对象
+			for(let i in data){
+				// 获取数据(属性值)的类型
+				let type = getDataType(data[i]);
+				// 判断
+				if(type === 'Object' || type === 'Array'){
+					// 递归调用
+					container[i] = deepClone(data[i]);
+				}else{
+					container[i] = data[i];
+				}
+			}
+			// 返回给调用者
+			return container;
+		}
+
+		// 调用函数
+		const result = deepClone(school);
+		result.pos[0] = 'shanghai';
+		result.foounder.age = 46;
+
+		console.log(school);
+		console.log(result);
+
+
+		// 函数 回去数据的类型
+		function getDataType(data){
+			return Object.prototype.toString.call(data).slice(8,-1);
+		}
+
+		/*
+		[Object Array] =>  Array
+		[Object Object] =>  Object
+		*/
+
+		// getDataType([]) // => Array
+		// getDataType({}) // => Object
+		// getDataType(3)  // => Object
+		// getDataType('hello')// => Object
+
+		var res = 1 + 1;
+		console.log(res);
+
+
+	</script>
+</body>
+</html>

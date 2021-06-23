@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>浅拷贝</title>
+</head>
+<body>
+	<script>
+		// 拷贝 就是 复制     对象和数组
+		// 1.直接复制
+		// const school = {
+		// 	name: '尚硅谷',
+		// 	pos:['北京','上海','深圳']
+		// };
+		// // 直接赋值
+		// const newSchool = school;
+
+		// // 修改新数据的属性
+		// newSchool = 'ATGUIGU';
+
+		// console.log(school);
+		// console.log(newSchool);
+
+
+		// 2.数组
+		const arrv = ['A','B','C',{name: 'atguigu'}];
+		// 1> concat
+		const newArr = [].concat(arr);
+		// 对新对象的值进行修改
+		newArr[3].name = '尚硅谷';
+		console.log(arr);
+		console.log(newArr);
+
+		// 2> slice
+		const newArr = arr.slice(0);
+		// 对新对象的值进行修改
+		newArr[3].name = '尚硅谷';
+		console.log(newArr);
+		console.log(arr);
+
+		// 3>扩展运算符
+		const newArr = [...arr];
+		//对新对象的值进行修改
+		newArr[3].name = '尚硅谷';
+		console.log(arr);
+		console.log(newArr);
+
+	// 3.对象
+		const school = {
+			name: 'atguigu',
+			pos: ['上海','北京','深圳']
+		};
+
+		// 使用assing\方法创建对象
+		const newSchool = Object.assing({},school);
+
+		// 修改 pos 属性中的值
+		newSchool.pos[0] = 'shanghai';
+
+		console.log(school);
+		console.log(newSchool);
+
+
+
+
+	</script>
+</body>
+</html>

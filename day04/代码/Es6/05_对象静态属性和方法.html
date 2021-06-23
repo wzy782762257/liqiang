@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>对象静态属性和方法</title>
+</head>
+<body>
+	<script>
+		// 静态成员是[属于类]的, 不属于实例对象
+		function Phone (brand,price){
+			this.brand = brand;
+			this.price = price;
+		}
+
+		// 添加静态成员
+		Phone.name = '手机';
+		Phone.change = function(){
+			console.log('我改变了世界...');
+		};
+
+		const huawei = new Phone('华为',5999);
+
+		console.log(huawei.name);
+		Phone.change();
+
+		// ES6  class  声明静态成员
+		class Phone{
+			// 构造方法
+			constructor(brand,price){
+				this.brand = brand;
+				this.price = price;
+			}
+			static name = '手机';
+			static change(){
+				console.log('我改变了世界');
+			}
+		}
+
+		const xiaomi = new Phone('小米11',6000);
+
+		console.log(xiaomi);
+		console.log(Phone.name);
+		console.log(Phone.change);
+
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>class的set-get</title>
+</head>
+<body>
+	<script>
+		class Computer{
+			// 针对[实例化对象]的price 属性管理的
+			set price(v){
+				console.log('我的值被设置了');
+			}
+
+			get price(){
+				return 2345;
+			}
+
+			// 静态成员属性的 get 和 set
+			static get name() {
+				return '电脑';
+			}
+
+			static set name(v){
+				console.log('我的值被设置了');
+			}
+		}
+
+		// 实例化对象
+		const acer = new Computer();
+
+		// 读取属性
+		console.log(acer.price);
+		// 设置属性
+		acer.price = 5000;
+
+		// 测试
+		console.log(Computer,name);
+		Computer.name = '计算机'
+	</script>
+</body>
+</html>

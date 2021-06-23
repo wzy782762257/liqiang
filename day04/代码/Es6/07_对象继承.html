@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>对象继承</title>
+</head>
+<body>
+	<script>
+		// 面向对象的三大特特征  封装   继承    多态
+		// 声明父类
+		class Phone{
+			// 构造方法
+			constructor(brand,price){
+				this.brand = brand;
+				this.price =price;
+			}
+			// 成员方法
+			call(){
+				console.log('我可以打电话');
+			}
+		}
+
+		// 声明子类
+		class SmartPhone extends Phone{
+			// 构造方法
+			constructor(brand,price,pixel,storage){
+				// 调用父类的规则方法进行初始化
+				super(brand,price);// super 超级
+				this.pixel = pixel;
+				this.storage = storage;
+			}
+			// 子类方法
+			photo()  {
+				console.log('我可以拍照');
+			}
+
+			playGame() {
+				console.log('我可以打游戏');
+			}
+		}
+
+		// 实例化
+		const chuanyin = new SmartPhone('传音','不知道','500w','128G');
+
+		console.log(chuanyin);
+	</script>
+</body>
+</html>

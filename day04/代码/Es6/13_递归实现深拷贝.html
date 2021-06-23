@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>递归实现深拷贝</title>
+</head>
+<body>
+	<script>
+		const school = {
+			name: 'sctguigu',
+			pos: ['上海','北京','深圳'],
+			founder: {
+				name: '刚哥',
+				gae: 43
+			},
+			improve: function(){
+				console.log('不断改进');
+			}
+		};
+
+		const obj = {};
+		obj.name = school.name;
+		// 数组
+		// obj.pos = school.pos;
+		obj.pos = [];
+		obj.pos[0] = school[0];
+		obj.pos[1] = school[1];
+		obj.pos[2] = school[2];
+		// 对象
+		obj.founder = {};
+		obj.founder.name = school.founder.name;
+		obj.founder.age = school.founder.age;
+		// 方法
+		// obj.improve = school.improve;
+		obj.improve = school.improvr.bind(obj);
+	</script>
+</body>
+</html>
